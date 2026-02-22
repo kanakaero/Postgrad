@@ -1,0 +1,47 @@
+! ----------------------------------------------------------------------
+! Input File for a 2D steady Diffusion Equation Solver using the 
+! Finite Volume Method and a Gauss Seidel Solver
+! ----------------------------------------------------------------------
+! Author: Kanak Agarwal (kanakaero.github.io)
+! Last Modified: 28th September 2025
+! ----------------------------------------------------------------------
+! Important Points to Note:
+! ----------------------------------------------------------------------
+! Input Expressions using ^ instead of ** for the power operator
+! Don't add spaces in the inputted expressions, the evaluator will break!
+! Input sources in two parts - Known + Unknown parts
+! Neumann - "neu", Dirichlet - "dir"
+! Boundary Condition on the face of the domain - "bc_b", "bc_r", "bc_t", "bc_l"
+! Input Neumann Boundary conditions - Just input value/expression of flux (q)
+! Input Dirichlet Boundary conditions - Just input value/expression of Temperature
+! Input pi as p
+! Input Boundary Conditions in this order:
+! Bottom, Right, Top, Left
+! ----------------------------------------------------------------------
+
+! Domain
+lx 1
+ly 0.5
+nx 200
+ny 100
+
+! Mesh Stretching
+beta_x 1
+beta_y 1
+
+! Thermal Conductivity
+k 16*((y/H)+1)
+
+! Source Terms
+S_U 0
+S_P -1.5
+
+! Boundary Conditions
+bc_b "dir" 15
+bc_r "dir" 5*(1-y/H)+15*sin(p*y/H)
+bc_t "dir" 10
+bc_l "neu" -5000
+
+! Solver Parameters
+max_iter 1000
+tol 1e-6
