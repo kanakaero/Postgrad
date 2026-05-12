@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: pecann-capu
+Version: 0.1.0
+Summary: PECANN-CAPU: Physics and Equality-Constrained Artificial Neural Network with Conditionally Adaptive Penalty Update
+Author: Qifeng Hu
+License: MIT
+Project-URL: Homepage, https://github.com/HiPerSimLab/PECANN-CAPU
+Project-URL: Repository, https://github.com/HiPerSimLab/PECANN-CAPU
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=1.10
